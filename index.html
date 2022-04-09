@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Description -->
+  <meta name ="description" content= "Jeu de MEMORY version Kaamelott"/>
+  <!-- Robots -->
+  <meta name="robots" content="index, follow"/>
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Memory Kaamelott" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:image" content="images/Kscreen.png"/>
+  <meta property="og:description" content="Jeu de MEMORY version Kaamelott" />
+  <title>Miraculous Memory</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/faviconK.png">
+  <!-- My CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Reboot -->
+  <div class="reboot">
+    <h2 class="youwon"></h2>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="rank">
+      <p class="rank-text"></p>
+    </div>
+    <div class="score">
+      <p class="score-text"></p>
+    </div>
+  </header>
+
+  <section class="memory-game">
+    <!-- LadyBug -->
+    <div class="memory-card" data-cover="ladybug">
+      <img src="images/ladybug.gif" alt="ladybug" class="front-face">
+      <img src="images/back-face.png" alt="logo-miraculous" class="back-face">
+    </div>
+    <!-- LadyBug -->
+    <div class="memory-card" data-cover="ladybug">
+      <img src="images/ladybug.gif" alt="ladybug" class="front-face">
+      <img src="images/back-face.png" alt="logo-miraculous" class="back-face">
+    </div>
+    <!-- Marinette -->
+    <div class="memory-card" data-cover="marinette">
+      <img src="images/marinette.gif" alt="marinette" class="front-face">
+      <img src="images/back-face.png" alt="logo-miraculous" class="back-face">
+    </div>
+    <!-- Marinette -->
+    <div class="memory-card" data-cover="marinette">
+      <img src="images/marinette.gif" alt="marinette" class="front-face">
+      <img src="images/back-face.png" alt="logo-miraculous" class="back-face">
+    </div>
+    <!-- Adrien -->
+    <div class="memory-card" data-cover="adrien">
+      <img src="images/adrien.gif" alt="adrien" class="front-face">
+      <img src="images/back-face.png" alt="logo-miraculous" class="back-face">
+    </div>
+    <!-- Adrien -->
+    <div class="memory-card" data-cover="adrien">
+      <img src="images/adrien.gif" alt="adrien" class="front-face">
+      <img src="images/back-face.png" alt="logo-miraculous" class="back-face">
+    </div>
+    <!-- Chat Noir -->
+    <div class="memory-card" data-cover="chat-noir">
+      <img src="images/chatnoir.gif" alt="chat-noir" class="front-face">
+      <img src="images/back-face.png" alt="logo-miraculous" class="back-face">
+    </div>
+    <!-- Chat Noir -->
+    <div class="memory-card" data-cover="chat-noir">
+      <img src="images/chatnoir.gif" alt="chat-noir" class="front-face">
+      <img src="images/back-face.png" alt="logo-miraculous" class="back-face">
+    </div>
+    <!-- Papillon -->
+    <div class="memory-card" data-cover="papillon">
+      <img src="images/papillon.gif" alt="papillon" class="front-face">
+      <img src="images/back-face.png" alt="logo-miraculous" class="back-face">
+    </div>
+    <!-- Papillon -->
+    <div class="memory-card" data-cover="papillon">
+      <img src="images/papillon.gif" alt="papillon" class="front-face">
+      <img src="images/back-face.png" alt="logo-miraculous" class="back-face">
+    </div>
+    <!-- Tikki -->
+    <div class="memory-card" data-cover="tikki">
+      <img src="images/tikki.gif" alt="tikki" class="front-face">
+      <img src="images/back-face.png" alt="logo-miraculous" class="back-face">
+    </div>
+    <!-- Tikki -->
+    <div class="memory-card" data-cover="tikki">
+      <img src="images/tikki.gif" alt="tikki" class="front-face">
+      <img src="images/back-face.png" alt="logo-miraculous" class="back-face">
+    </div>
+    <!-- Plagg -->
+    <div class="memory-card" data-cover="plagg">
+      <img src="images/plagg.gif" alt="plagg" class="front-face">
+      <img src="images/back-face.png" alt="logo-miraculous" class="back-face">
+    </div>
+    <!-- Plagg -->
+    <div class="memory-card" data-cover="plagg">
+      <img src="images/plagg.gif" alt="plagg" class="front-face">
+      <img src="images/back-face.png" alt="logo-miraculous" class="back-face">
+    </div>
+    <!-- Rena Rouge -->
+    <div class="memory-card" data-cover="rena-rouge">
+      <img src="images/renarouge.gif" alt="rena-rouge" class="front-face">
+      <img src="images/back-face.png" alt="logo-miraculous" class="back-face">
+    </div>
+    <!-- Rena Rouge -->
+    <div class="memory-card" data-cover="rena-rouge">
+      <img src="images/renarouge.gif" alt="rena-rouge" class="front-face">
+      <img src="images/back-face.png" alt="logo-miraculous" class="back-face">
+    </div>
+    
+    
+  </section>
+  <!-- <button class="play-again"onclick="window.location.reload(false)">Rejouer</button> -->
+  <button class="play-again"onclick=resetAll()>Rejouer</button>
+
+
+  <!-- My JS -->
+  <script src="script.js"></script>
+</body>
+</html>

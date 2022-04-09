@@ -1,0 +1,256 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* FONTS */
+@font-face {
+  font-family: "Papyrus";
+  src: url(papyrus/PAPYRUS.ttf) format("truetype");
+}
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Lobster', cursive;}
+
+body {
+  background-image: url(images/background_miraculous.jpeg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body::after {
+  content: "";
+  background-color: #000;
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+/* RESTART */
+.reboot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translate(-50%, -20%);
+  font-size: 2rem;
+  color: #000;
+  margin-top: 3rem;
+  z-index: 10;
+  opacity: 0;
+  width: 70%;
+  /* line-height: 2.5rem; */
+  visibility: hidden;
+}
+
+.reboot.fade-in,
+.memory-game.fade-in {
+  opacity: 1;
+  transition: opacity 2s;
+  visibility: visible;
+}
+
+.youwon {
+  margin: 1rem 0;
+  font-size: clamp(2rem, 2vw, 5rem);
+  color: #FFF;
+}
+
+button {
+  background-color: #FFF;
+  color: #000;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin: 0 auto 2rem;
+  min-height: 44px;
+  padding: 9px 20px 8px;
+  border: 3px solid black;
+  text-align: center;
+  width: 7rem;
+  transition: all ease .1s;
+  font-family: 'Lobster';
+  top: -10rem;
+}
+
+.play-again:hover,
+.play-again:focus {
+  opacity: .75;
+  background: rgb(251, 50, 50);
+  color: #FFF;
+}
+
+/* HEADER */
+header {
+  position: absolute;
+  height: 9vh;
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: all ease .3s;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 2vw, 4rem);
+}
+
+.rank,
+.score {
+  color: rgb(0, 0, 0);
+  font-size: clamp(1rem, 2vw, 2.4rem);
+  margin: 20px;
+  flex: 1;
+}
+
+.rank {
+  font-size: clamp(1rem, 1.5vw, 2rem);
+}
+
+.shake {
+  animation: scaling 1s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes scaling {
+  100% {
+    transform: scale(2);
+  }
+}
+
+.memory-game {
+  margin: auto;
+  min-width: clamp(350px, 40vw, 800px);
+  min-height: clamp(350px, 40vw, 800px);
+  height: 60vh;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+  position: relative;
+  justify-content: center;
+}
+
+.memory-card {
+  width: calc(25% - 20px);
+  height: calc(25% - 20px);
+  margin: 10px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  opacity: 1;
+}
+
+.memory-card:active {
+  transform: scale(.97);
+  transition: transform .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.memory-game.fade-out {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-ms-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+.front-face,
+.back-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f1f1f1;
+  -webkit-perspective: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0);
+  visibility:visible;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+.memory-card img {
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid black;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+              0 2px 2px rgba(0,0,0,0.15), 
+              0 4px 4px rgba(0,0,0,0.15), 
+              0 8px 8px rgba(0,0,0,0.15);
+}
+
+/** MEDIA QUERIES **/
+/* Mobile Landscape only */
+@media screen and (orientation:landscape) and (max-height: 400px) {
+  .memory-game {
+    margin: 2rem auto;
+  }
+}
